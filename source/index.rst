@@ -3,7 +3,7 @@ RGC Specification
 
 This page serves as the specification (and documentation) for the .rgc (Rhythm Game Chart) file format.
 
-The current version of RGC is ``0.0.3``. As of writing this, this is in development, and is not stable for any purpose.
+The current version of RGC is ``v0.1.0``. As of writing this, this is in development, and is not stable for any purpose.
 
 This specification is expected to be followed exactly by implementers, to avoid incompatibilities or spec fragmentation.
 
@@ -25,8 +25,8 @@ RGC does not replace any existing formats, and does not have to be implemented b
    :caption: Specification
 
    rgc/outline
-   rgc/rgcmeta
    rgc/meta
+   rgc/rgcMeta
    rgc/events
    rgc/event
    
