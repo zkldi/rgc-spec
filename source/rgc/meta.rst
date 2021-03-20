@@ -1,9 +1,11 @@
 .. _rgc_rgcmeta:
 
-RGC: RGCMeta
+RGC: Meta
 ==================================
 
-RGCMeta (field name ``rgcMeta``) **MUST NOT** be extended by formats. Format Metadata should go inside ``meta``.
+Meta (field name ``meta``) **MUST NOT** be extended by schemas. Schema Metadata - that is, information about the chart - should go inside ``chartMeta``.
+
+.. note:: All of these fields **MUST** be present for the file to be valid RGC.
 
 .. list-table:: Contents
     :widths: 25 25 50
@@ -12,18 +14,27 @@ RGCMeta (field name ``rgcMeta``) **MUST NOT** be extended by formats. Format Met
     *   - Key
         - Type
         - Description
-    *   - ``format``
-        - Format String
-        - Contains the format the RGC adheres to.
+    *   - ``schema``
+        - Schema String
+        - Contains the schema the RGC adheres to.
     *   - ``rgcVersion``
         - Version String
         - Contains the version of RGC this adheres to. This is not expected to change in the future, but is defined anyway.
-    *   - ``formatVersion``
+    *   - ``schemaVersion``
         - Positive Integer
-        - Contains the version of the format this is for. This is a single integer, and is intended for parsers/serialisers to know what they're doing.
+        - Contains the version of the schema this is for. This is a single integer, and is intended for parsers/serialisers to know what they're working with.
+    *   - ``title``
+        - String | null
+        - The song title for this chart. If this is not known, this **SHOULD** be null.
+    *   - ``artist``
+        - String | null
+        - The song artist for this chart. If this is not known, this **SHOULD** be null.
+    *   - ``charter``
+        - String | null
+        - The charter behind this song. If this is not known, this **SHOULD** be null.
 
 ####################################
-Format String
+Schema String
 ####################################
 
 The value of this field **MUST** be a string, and **MUST** match the following criteria:
@@ -58,6 +69,8 @@ The value of this field **MUST** be a string, and **MUST** match the following c
       - Invalid: Space is not a legal character.
     * - ``ぽげ/game``
       - Invalid: ぽ and げ are not legal characters.
+    * - ``foo/bar/baz``
+      - Invalid: / is not a legal character outside of the namespace divider.
 
 .. note::
     This can be implemented with the following regex: ``/^[a-zA-Z0-9-]{3,32}\/[a-zA-Z0-9-]{3,32}$/``.
@@ -108,3 +121,4 @@ The value of a Version String **MUST** match the following criteria:
 
 .. note::
     This can be implemented with the following regex: ``/^(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$/``.
+
