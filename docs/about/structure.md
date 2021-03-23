@@ -10,7 +10,7 @@ an example RGC file adhering to the ``std/iidx-SP`` schema, version 1.
 {
     "meta": {
         "schema": "std/iidx-SP",
-        "rgcVersion": "0.1.1",
+        "rgcVersion": "0.2.0",
         "schemaVersion": 1,
         "title": "GAMBOL",
         "artist": "SLAKE",

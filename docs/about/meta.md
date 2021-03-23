@@ -5,7 +5,7 @@ We'll be disecting this part of the example RGC file:
 ```json
 "meta": {
     "schema": "std/iidx-SP",
-    "rgcVersion": "0.1.1",
+    "rgcVersion": "0.2.0",
     "schemaVersion": 1,
     "title": "GAMBOL",
     "artist": "SLAKE",

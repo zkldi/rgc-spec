@@ -2,7 +2,7 @@
 
 This page serves as the specification (and documentation) for the .rgc (Rhythm Game Chart) file format.
 
-The current version of RGC is ``v0.1.0``. As of writing this, this is in development, and is not stable for any purpose.
+The current version of RGC is ``v0.2.0``. As of writing this, this specification is in development, and is not stable for any purpose.
 
 RGC is a JSON schema for rhythm game charts. It is designed to be simple to interact with, and doubles up as an interchange format between rhythm games.
 
