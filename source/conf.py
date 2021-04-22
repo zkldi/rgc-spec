@@ -21,6 +21,7 @@ project = 'RGC Specification'
 copyright = '2021, zkldi'
 author = 'zkldi'
 
+master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
 

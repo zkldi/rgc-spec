@@ -1,6 +1,6 @@
-.. _std/iidx-DP:
+.. _std/iidx-SP:
 
-std/iidx-DP
+std/iidx-SP
 ==================================
 
 ################
@@ -23,25 +23,25 @@ Associated Filetypes
 Description
 ***********
 
-This is the std library format for beatmania IIDX's Double Player (DP) game mode. In game, this mode utilises 14 keys and two turntables.
+This is the std library format for beatmania IIDX's Single Player (SP) game mode. In game, this mode utilises 7 keys and a turntable.
 
 ************************
-Latest ``formatVersion``
+Latest ``schemaVersion``
 ************************
 
 1
 
-####################
-``meta`` Extensions
-####################
+#########################
+``chartMeta`` Extensions
+#########################
 
-.. module:: meta
 
 .. data:: genre
 
     The genre for the song. If not known, this should be null.
 
     :type: String | null
+    :noindexentry:
 
 .. data:: difficulty
 
@@ -54,15 +54,15 @@ Latest ``formatVersion``
         This difficulty list does not include LIGHT7, 7KEYS or BLACK ANOTHER.
         The reason for this is that all of these have a modern counterpart.
 
-    :type: "NORMAL" | "HYPER" | "ANOTHER" | "LEGGENDARIA" | null
+    :type: "BEGINNER" | "NORMAL" | "HYPER" | "ANOTHER" | "LEGGENDARIA" | null
 
 
 .. data:: level
 
     The difficulty level for this chart. If not known, this should be null.
 
-    .. info::
-        7+ and 8+ are legacy levels, and have not been used since IIDX12 in 2005.
+    .. note::
+        7+ and 8+ are legacy levels, and have not been used since IIDX11 in 2005.
 
     :type: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "7+" | "8+" | null
 
@@ -76,8 +76,6 @@ Latest ``formatVersion``
 ``events`` Extensions
 ######################
 
-.. module:: events
-
 .. warning::
     As stated in overview, all events **MUST** inherit :ref:`rgc_event`.
     As such, all events defined below **ALSO** have the properties of :ref:`rgc_event`.
@@ -90,19 +88,13 @@ Latest ``formatVersion``
 
         The column this note is for, starts from 0.
 
-        :type: Bounded Integer [0,13]
+        :type: 0 | 1 | 2 | 3 | 4 | 5 | 6
 
     :type: List<NoteEvent>
 
 .. data:: SCRATCH
 
     The scratch notes in the chart. These are played by the turntable.
-
-    .. attribute:: ScratchEvent.col
-
-        The column this scratch is for. 0 is left side, 1 is right side.
-
-        :type: 0 | 1.
 
     :type: List<:ref:`rgc_event`>
 
@@ -116,7 +108,7 @@ Latest ``formatVersion``
 
         The column this CN is on, starts from 0.
 
-        :type: Bounded Integer [0,13]
+        :type: 0 | 1 | 2 | 3 | 4 | 5 | 6
 
     .. attribute:: CNEvent.msEnd
 
@@ -145,12 +137,6 @@ Latest ``formatVersion``
     The Backspin Scratches (BSSes) in the chart.
 
     These are essentially hold-scratches, where the user would have to keep spinning the turntable, then spin the other way at the end.
-
-    .. attribute:: BSSEvent.col
-
-        The column this scratch is for. 0 is left side, 1 is right side.
-
-        :type: 0 | 1.
 
     .. attribute:: BSSEvent.msEnd
 
@@ -213,6 +199,10 @@ Latest ``formatVersion``
         
         The column this audio sample is attached to.
 
+        .. warning::
+            Despite SP only having 7 playable columns, it is perfectly legal (and used in real charts) to place samples on
+            any of the 14 keys.
+
         :type: Bounded Integer [0,13]
 
     .. attribute:: SampleEvent.sound
@@ -245,13 +235,10 @@ Latest ``formatVersion``
 
     Indicates that there is a measure bar meant to be displayed here.
 
-    .. attribute:: MeasureBarEvent.side
+    .. note::
+        Interestingly, this is a specific event in the game, and `can be omitted completely from the chart. <https://www.youtube.com/watch?v=1joKw32ahG4>`_
 
-        What side this measure bar should appear on. It should be noted that no chart in game uses separate bars per side.
-
-        :type: 0 | 1
-
-    :type: List<MeasureBarEvent>
+    :type: List<:ref:`rgc_event`>
 
 .. data:: EOC
 
@@ -269,9 +256,6 @@ Latest ``formatVersion``
     .. warning::
         Without defining these, the game will default to no timing windows for anything other than PGREATs, which is near-unplayable.
         That is to say, these are **NOT** implicitly defined.
-
-    .. info::
-        In DP charts, these values are sometimes replicated twice. It is not yet known if this has any effect on gameplay.
 
     .. attribute:: TimingWindowEvent.window
 

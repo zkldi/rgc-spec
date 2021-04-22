@@ -26,16 +26,16 @@ RGC does not replace any existing formats, and does not have to be implemented b
 
    rgc/outline
    rgc/meta
-   rgc/rgcMeta
+   rgc/chart-meta
    rgc/events
    rgc/event
    
 .. toctree::
-   :maxdepth: 2
-   :caption: Standard Formats
+    :maxdepth: 2
+    :caption: Official Schemas
 
-   std/iidx-SP
-   std/iidx-DP
+    schema/std/iidx-SP.inc
+    schema/std/iidx-DP.inc
 
 .. meta::
     :title: RGC Specification
