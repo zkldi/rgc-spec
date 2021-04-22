@@ -22,7 +22,7 @@ Similarly, other design decisions have been made to make RGC as simple to work w
 
 ## But you're proposing another format? Doesn't that make things worse?
 
-![](img/standards.png)
+![](../img/standards.png)
 
 Under normal circumstances, I'd agree that this would contribute to a mess of more and more schemas, except, there aren't actually existing standards for a rhythm game chart.
 

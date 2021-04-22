@@ -26,12 +26,23 @@ These are **NOT** a substitute for the technical documentation, and the technica
 * [RGC ``meta``](about/meta)
 * [RGC ``chartMeta``](about/chart-meta)
 * [RGC ``events``](about/events)
+* [Identifying RGC Files](about/identity)
 
 ## Implementation
 
 If you are interested in implementing or working with RGC, the
 below pages contain exhaustive technical information about implementation.
 
+* [Core Notes](implementation/core-notes.md)
+* [File Format Specification](implementation/file.md)
+* [RGC Parsing Specification](implementation/parsing.md)
+* [RGC Schema](implementation/schema.md)
+* [RGC Sorting Specification](implementation/sorting.md)
+* [RGC Hashing](implementation/hashing.md)
+
 ## Schemas
 
 Alongside RGC we maintain a set of standardised schemas to work with. This page should be used as the official reference for those schemas.
+
+* [std/iidx-SP](schemas/std/iidx-SP.md)
+* [std/iidx-DP](schemas/std/iidx-DP.md)

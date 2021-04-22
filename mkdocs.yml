@@ -16,6 +16,7 @@ nav:
     - "about/meta.md"
     - "about/chart-meta.md"
     - "about/events.md"
+    - "about/identity.md"
   - Implementation:
     - "implementation/core-notes.md"
     - "implementation/file.md"
@@ -25,6 +26,7 @@ nav:
     - "implementation/hashing.md"
   - Schemas:
     - "schemas/std/iidx-SP.md"
+    - "schemas/std/iidx-DP.md"
 
 markdown_extensions:
   - admonition
