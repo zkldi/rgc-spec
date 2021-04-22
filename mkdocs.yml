@@ -1,0 +1,32 @@
+site_name: RGC Specification
+site_description: The official specification for RGC.
+site_author: TNG Studios
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+nav:
+  - Introduction: "index.md"
+  - About:
+    - "about/motivation.md"
+    - "about/definition.md"
+    - "about/structure.md"
+    - "about/meta.md"
+    - "about/chart-meta.md"
+    - "about/events.md"
+  - Implementation:
+    - "implementation/core-notes.md"
+    - "implementation/file.md"
+    - "implementation/parsing.md"
+    - "implementation/schema.md"
+    - "implementation/sorting.md"
+    - "implementation/hashing.md"
+  - Schemas:
+    - "schemas/std/iidx-SP.md"
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
